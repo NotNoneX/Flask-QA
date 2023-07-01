@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载静态文件</title>
+    <!-- url_for加载css js-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/my.js') }}"></script>
+</head>
+<body>
+<!-- url_for加载图片-->
+<img src="{{ url_for('static',filename='images/NNX.jpg') }}" width="20%" alt="">
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter过滤器</title>
+</head>
+<body>
+<div>{{ user.username }} 的长度是 {{ user.username | length }}</div>
+<div>当前时间是: {{ cur_time }}</div>
+<div>使用自定义过滤器后--当前时间是: {{ cur_time | date_form}}</div>
+</body>
+</html>
