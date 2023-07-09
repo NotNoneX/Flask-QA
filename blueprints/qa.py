@@ -48,7 +48,6 @@ def publish_qa():
             db.session.add(question)
             db.session.commit()
             print("qa.py_L39_发布成功!")
-            # todo: 跳转到详情页 以下暂用
             return redirect(url_for("qa.qa_detail", qid=question.id))
         else:
             return redirect(url_for("qa.public_qa"))

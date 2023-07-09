@@ -7,6 +7,7 @@
 import wtforms
 from wtforms.validators import Email, Length, EqualTo
 from wtforms.validators import InputRequired
+
 from models import UserModel, EmailCodeModel
 
 

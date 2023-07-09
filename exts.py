@@ -4,8 +4,8 @@
 # @E-mail: NotNoneX@Gmail.com
 # @File: exts.py
 """ 扩展文件: 解决循环引用问题"""
-from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 mail = Mail()

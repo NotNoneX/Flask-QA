@@ -7,19 +7,20 @@
 from flask import Flask, session
 # flask中的g用于 存储全局变量
 from flask import g
+from flask_migrate import Migrate
+
 import config
+from blueprints.auth import bp as auth_bp
+from blueprints.qa import bp as qa_bp
 from exts import db
 from exts import mail
 from models import UserModel
-from blueprints.qa import bp as qa_bp
-from blueprints.auth import bp as auth_bp
-from flask_migrate import Migrate
 
 app = Flask(__name__)
 # 绑定写好的配置文件 config.py
 app.config.from_object(config)
 
-# 初始化书籍库 邮箱
+# 初始化数据库 邮箱
 db.init_app(app)
 mail.init_app(app)
 
@@ -58,6 +59,7 @@ def my_before_request():
 
 # 钩子函数: 上下文处理器
 # 作用: 所有自定义变量在所有模板中全局可访问. 函数的返回结果必须是dict
+# 注意: 是所有模板 templates下
 @app.context_processor
 def my_context_processor():
     return {"userinfo": g.userinfo}

@@ -4,8 +4,9 @@
 # @E-mail: NotNoneX@Gmail.com
 # @File: models.py
 """ 模型文件 """
-from exts import db
 from datetime import datetime
+
+from exts import db
 
 
 class UserModel(db.Model):

@@ -8,8 +8,8 @@
 pip install flask-migrate
 """
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 
 # sql语句需要用此方法包裹 否则报错
 

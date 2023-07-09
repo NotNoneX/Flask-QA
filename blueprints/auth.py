@@ -8,20 +8,20 @@ import random
 import string
 
 from flask import Blueprint, jsonify
-from flask import render_template
-from flask import request
 # 重定向模块 视图函数转url模块
 from flask import redirect, url_for
+from flask import render_template
+from flask import request
+# 存放登录信息 flask中的session是经过加密后储存在cookie中的 所以需要设置加密混淆字符(配置文件)
+from flask import session
 from flask_mail import Message
 # flask密码加密模块 flask密码解密对比模块
 from werkzeug.security import generate_password_hash, check_password_hash
-# 存放登录信息 flask中的session是经过加密后储存在cookie中的 所以需要设置加密混淆字符(配置文件)
-from flask import session
 
-from exts import mail, db
-from models import EmailCodeModel, UserModel
 # 导入自定义的注册验证类
 from blueprints.forms import RegisterForm, LoginForm
+from exts import mail, db
+from models import EmailCodeModel, UserModel
 
 # 实例化蓝图: 蓝图名字, xxx, 蓝图路由前缀 /auth
 bp = Blueprint("auth", __name__, url_prefix="/auth")
